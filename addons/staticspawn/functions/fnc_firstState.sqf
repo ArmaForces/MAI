@@ -36,6 +36,6 @@ _logic setVariable [QGVAR(forceActivate), _forceActivate];
 _logic setVariable [QGVAR(checkBuildings), _checkBuildings];
 _logic setVariable [QGVAR(activateCondition), _activateCondition];
 _logic setVariable [QGVAR(executionCodeUnit), _executionCodeUnit];
-_logic setVariable [QGVAR(executionCodePatrol), _executionCodeGroup];
+_logic setVariable [QGVAR(executionCodeGroup), _executionCodeGroup];
 
 [_logic] call FUNC(loop);
