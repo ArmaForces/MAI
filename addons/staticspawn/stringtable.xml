@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="MAI_2">
+    <Key ID="STR_MAI_sphereSize">
+        <Original>Distance</Original>
+        <Polish>Dystans</Polish>
+    </Key>
+    <Key ID="STR_MAI_sphereSizeShort">
+        <Original>The distance of checking the presence of players</Original>
+        <Polish>Dystans sprawdzania obecności graczy</Polish>
+    </Key>
+    <Key ID="STR_MAI_sphereDespawnDistance">
+        <Original>Despawn distance</Original>
+        <Polish>Dystans despawnu</Polish>
+    </Key>
+    <Key ID="STR_MAI_sphereDespawnDistanceShort">
+        <Original>The distance of checking the presence of players above which units will be removed. Added to spawn value.</Original>
+        <Polish>Dystans sprawdzania obecności graczy powyżej którego jednostki zostaną usunięte. Dodane do wartości spawnu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_checkVisibility">
+        <Original>Visibility check</Original>
+        <Polish>Sprawdzanie widoczności</Polish>
+    </Key>
+    <Key ID="STR_MAI_checkVisibilityShort">
+        <Original>Unactive</Original>
+        <Polish>Nieaktywne</Polish>
+    </Key>
+    <Key ID="STR_MAI_sphereBackDistance">
+        <Original>Offset checking</Original>
+        <Polish>Przsunięcie sprawdzania</Polish>
+    </Key>
+    <Key ID="STR_MAI_sphereBackDistanceShort">
+        <Original>How far back will players be checked.</Original>
+        <Polish>Jak daleko do tyłu będzie sprawdzane obecność graczy.</Polish>
+    </Key>
+</Project>
