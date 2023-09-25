@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 
 class CfgFactionClasses
 {
@@ -62,7 +63,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_sphereSize";
 				tooltip = "$STR_MAI_sphereSizeShort";
 				defaultValue = "250";
-				property = "MAI_sphereSize";
+				property = "AFMF_staticspawn_sphereSize";
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -72,7 +73,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_sphereDespawnDistance";
 				tooltip = "$STR_MAI_sphereDespawnDistanceShort";
 				defaultValue = "50";
-				property = "MAI_sphereDespawnDistance";
+				property = "AFMF_staticspawn_sphereDespawnDistance";
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -81,7 +82,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_checkVisibility";
                 tooltip = "$STR_MAI_checkVisibilityShort";
-                property = "MAI_checkVisibility";
+                property = "AFMF_staticspawn_checkVisibility";
                 defaultValue = "true";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -91,7 +92,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_sphereBackDistance";
 				tooltip = "$STR_MAI_sphereBackDistanceShort";
 				defaultValue = "35";
-				property = "MAI_sphereBackDistance";
+				property = "AFMF_staticspawn_sphereBackDistance";
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -101,7 +102,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_sphereBackDistance";
 				tooltip = "$STR_MAI_sphereBackDistanceShort";
 				defaultValue = "0.35";
-				property = "MAI_forceSpawnDistance";
+				property = "AFMF_staticspawn_forceSpawnDistance";
 				expression = "_this setVariable ['%s',_value max 0 min 1];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -111,7 +112,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_interval";
 				tooltip = "$STR_MAI_intervalShort";
 				defaultValue = "0.1";
-				property = "interval";
+				property = "AFMF_staticspawn_interval";
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -121,7 +122,7 @@ class CfgVehicles
 				displayName = "$STR_MAI_unitsPerInterval";
 				tooltip = "$STR_MAI_unitsPerIntervalShort";
 				defaultValue = "1";
-				property = "unitsPerInterval";
+				property = "AFMF_staticspawn_unitsPerInterval";
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -130,7 +131,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_deleteVehicles";
                 tooltip = "$STR_MAI_deleteVehiclesShort";
-                property = "deleteVehicles";
+                property = "AFMF_staticspawn_deleteVehicles";
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -139,7 +140,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_checkBuildings";
                 tooltip = "$STR_MAI_checkBuildingsShort";
-                property = "checkBuildings";
+                property = "AFMF_staticspawn_checkBuildings";
                 defaultValue = "true";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -148,7 +149,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_activateCondition";
                 tooltip = "$STR_MAI_activateConditionShort";
-                property = "activateCondition";
+                property = "AFMF_staticspawn_activateCondition";
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "'true'";
@@ -160,7 +161,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_deleteTrigger";
                 tooltip = "$STR_MAI_deleteTriggerShort";
-                property = "deleteTrigger";
+                property = "AFMF_staticspawn_deleteTrigger";
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -169,7 +170,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_forceActivate";
                 tooltip = "$STR_MAI_forceActivateShort";
-                property = "forceActivate";
+                property = "AFMF_staticspawn_forceActivate";
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -178,7 +179,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_executionCodeUnit";
                 tooltip = "$STR_MAI_executionCodeUnitShort";
-                property = "MAI_executionCodeUnit";
+                property = "AFMF_staticspawn_executionCodeUnit";
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
@@ -190,7 +191,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_executionCodeGroup";
                 tooltip = "$STR_MAI_executionCodeGroupShort";
-                property = "MAI_executionCodeGroup";
+                property = "AFMF_staticspawn_executionCodeGroup";
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
