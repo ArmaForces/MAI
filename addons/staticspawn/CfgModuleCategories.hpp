@@ -58,98 +58,98 @@ class CfgVehicles
 		class Attributes: AttributesBase
 		{
 			// Arguments shared by specific module type (have to be mentioned in order to be present)
-			class MAI_sphereSize: Default
+			class GVAR(sphereSize): Default
   			{
 				displayName = "$STR_MAI_sphereSize";
 				tooltip = "$STR_MAI_sphereSizeShort";
 				defaultValue = "250";
-				property = "AFMF_staticspawn_sphereSize";
+				property = QGVAR(sphereSize);
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class MAI_sphereDespawnDistance: Default
+			class GVAR(sphereDespawnDistance): Default
   			{
 				displayName = "$STR_MAI_sphereDespawnDistance";
 				tooltip = "$STR_MAI_sphereDespawnDistanceShort";
 				defaultValue = "50";
-				property = "AFMF_staticspawn_sphereDespawnDistance";
+				property = QGVAR(sphereDespawnDistance);
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class MAI_checkVisibility: Checkbox
+			class GVAR(checkVisibility): Checkbox
             {
                 displayName = "$STR_MAI_checkVisibility";
                 tooltip = "$STR_MAI_checkVisibilityShort";
-                property = "AFMF_staticspawn_checkVisibility";
+                property = QGVAR(checkVisibility);
                 defaultValue = "true";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-			class MAI_sphereBackDistance: Default
+			class GVAR(sphereBackDistance): Default
   			{
 				displayName = "$STR_MAI_sphereBackDistance";
 				tooltip = "$STR_MAI_sphereBackDistanceShort";
 				defaultValue = "35";
-				property = "AFMF_staticspawn_sphereBackDistance";
+				property = QGVAR(sphereBackDistance);
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class MAI_forceSpawnDistance: Default
+			class GVAR(forceSpawnDistance): Default
   			{
 				displayName = "$STR_MAI_sphereBackDistance";
 				tooltip = "$STR_MAI_sphereBackDistanceShort";
 				defaultValue = "0.35";
-				property = "AFMF_staticspawn_forceSpawnDistance";
+				property = QGVAR(forceSpawnDistance);
 				expression = "_this setVariable ['%s',_value max 0 min 1];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class interval: Default
+			class GVAR(interval): Default
   			{
 				displayName = "$STR_MAI_interval";
 				tooltip = "$STR_MAI_intervalShort";
 				defaultValue = "0.1";
-				property = "AFMF_staticspawn_interval";
+				property = QGVAR(interval);
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class unitsPerInterval: Default
+			class GVAR(unitsPerInterval): Default
   			{
 				displayName = "$STR_MAI_unitsPerInterval";
 				tooltip = "$STR_MAI_unitsPerIntervalShort";
 				defaultValue = "1";
-				property = "AFMF_staticspawn_unitsPerInterval";
+				property = QGVAR(unitsPerInterval);
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class deleteVehicles: Checkbox
+			class GVAR(deleteVehicles): Checkbox
             {
                 displayName = "$STR_MAI_deleteVehicles";
                 tooltip = "$STR_MAI_deleteVehiclesShort";
-                property = "AFMF_staticspawn_deleteVehicles";
+                property = QGVAR(deleteVehicles);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-			class checkBuildings: Checkbox
+			class GVAR(checkBuildings): Checkbox
             {
                 displayName = "$STR_MAI_checkBuildings";
                 tooltip = "$STR_MAI_checkBuildingsShort";
-                property = "AFMF_staticspawn_checkBuildings";
+                property = QGVAR(checkBuildings);
                 defaultValue = "true";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-            class activateCondition
+            class GVAR(activateCondition)
             {
                 displayName = "$STR_MAI_activateCondition";
                 tooltip = "$STR_MAI_activateConditionShort";
-                property = "AFMF_staticspawn_activateCondition";
+                property = QGVAR(activateCondition);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "'true'";
@@ -157,29 +157,29 @@ class CfgVehicles
                 validate = "none";
                 wikiType = "[[String]]";
             };
-			class deleteTrigger: Checkbox
+			class GVAR(deleteTrigger): Checkbox
             {
                 displayName = "$STR_MAI_deleteTrigger";
                 tooltip = "$STR_MAI_deleteTriggerShort";
-                property = "AFMF_staticspawn_deleteTrigger";
+                property = QGVAR(deleteTrigger);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-			class forceActivate: Checkbox
+			class GVAR(forceActivate): Checkbox
             {
                 displayName = "$STR_MAI_forceActivate";
                 tooltip = "$STR_MAI_forceActivateShort";
-                property = "AFMF_staticspawn_forceActivate";
+                property = QGVAR(forceActivate);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-            class MAI_executionCodeUnit
+            class GVAR(executionCodeUnit)
             {
                 displayName = "$STR_MAI_executionCodeUnit";
                 tooltip = "$STR_MAI_executionCodeUnitShort";
-                property = "AFMF_staticspawn_executionCodeUnit";
+                property = QGVAR(executionCodeUnit);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
@@ -187,11 +187,11 @@ class CfgVehicles
                 validate = "none";
                 wikiType = "[[String]]";
             };
-            class MAI_executionCodeGroup
+            class GVAR(executionCodeGroup)
             {
-                displayName = "$STR_MAI_executionCodeGroup";
-                tooltip = "$STR_MAI_executionCodeGroupShort";
-                property = "AFMF_staticspawn_executionCodeGroup";
+                displayName = "$STR_MAI_executionCodePatrol";
+                tooltip = "$STR_MAI_executionCodePatrolShort";
+                property = QGVAR(executionCodeGroup);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
