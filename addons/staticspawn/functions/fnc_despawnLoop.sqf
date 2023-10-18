@@ -30,10 +30,11 @@ private _playerIndex = _nearplayers findIf {isPlayer _x && !(vehicle _x isKindOf
 // despawn unit
 if (_playerIndex == -1) then {
 	[_unit, _logic, _unitArray] call FUNC(despawn);
-	private _active = _logic getVariable ["active", true];
-	if !(_active) then {
-		[_logic] call MAI_fnc_staticSpawnInterval;
-	};
+	// private _active = _logic getVariable [QGVAR(active), true];
+	// if !(_active) then {
+	// 	systemChat "despawnLoop line 35";
+	// 	[_logic] call MAI_fnc_staticSpawnInterval;
+	// };
 } else {
 	[
 		{

@@ -22,7 +22,8 @@ params [
 if (_logic isEqualTo objNull) exitWith {};
 private _groups = _logic getVariable [QGVAR(groups), []];
 if (_groups isEqualTo []) exitWith {
-	_logic setVariable ["active", false];
+	systemChat "loop groups isEqualTo []";
+	_logic setVariable [QGVAR(active), false];
 };
 
 private _checkBuildings = _logic getVariable [QGVAR(checkBuildings), true];
