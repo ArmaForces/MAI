@@ -28,19 +28,14 @@ private _spherePos = _pos getPos [_sphereSizeUnit - _sphereBackDistanceUnit + _s
 private _nearplayers = _spherePos nearEntities ["allVehicles", _sphereSizeUnit + _sphereDespawnDistanceUnit];
 private _playerIndex = _nearplayers findIf {isPlayer _x && !(vehicle _x isKindOf "AIR")};
 // despawn unit
-if (_playerIndex == -1) then {
+if (_playerIndex == -1) exitWith {
 	[_unit, _logic, _unitArray] call FUNC(despawn);
-	// private _active = _logic getVariable [QGVAR(active), true];
-	// if !(_active) then {
-	// 	systemChat "despawnLoop line 35";
-	// 	[_logic] call MAI_fnc_staticSpawnInterval;
-	// };
-} else {
-	[
-		{
-			_this call FUNC(despawnLoop);
-		},
-		_this,
-		0.75 + random 0.5
-	] call CBA_fnc_waitAndExecute;
 };
+
+[
+	{
+		_this call FUNC(despawnLoop);
+	},
+	_this,
+	0.75 + random 0.5
+] call CBA_fnc_waitAndExecute;
