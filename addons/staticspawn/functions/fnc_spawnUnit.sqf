@@ -34,7 +34,8 @@ _unitArray params [
 	"_sphereBackDistanceUnit",
 	"_sphereDespawnDistanceUnit",
 	"_checkVisibilityUnit",
-	"_forceSpawnDistanceUnit"
+	"_forceSpawnDistanceUnit",
+	["_tickets", 1]
 ];
 
 private _maxUnitsPerDistance = _logic getVariable [QGVAR(maxUnitsPerdistance), 1];
@@ -110,6 +111,7 @@ if !(_unit isEqualTo objNull) then {
 	_unit setVariable [QGVAR(logic), _logic];
 	_unit setVariable [QGVAR(pos), _pos];
 	_unit setVariable [QGVAR(dir), _dir];
+	_unit setVariable [QGVAR(tickets), _tickets];
 
 	[_unit] call FUNC(addEH);
 	[_unit] call FUNC(despawnLoop);

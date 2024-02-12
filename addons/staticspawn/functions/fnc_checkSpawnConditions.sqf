@@ -25,12 +25,12 @@ private _minDistance = _logic getVariable [QGVAR(minDistance), 10];
 if (_distance > _minDistance) exitWith {false};
 
 // check if new bot will be facing same direction
-private _unitDir = _unit getVariable [QGVAR(dir), 0];
+private _unitDir = _unit getVariable [QGVAR(dir), getDir _unit];
 private _deltaAngle = [_unitDir, _dir] call BIS_fnc_getAngleDelta;
 private _maxAngle = _logic getVariable [QGVAR(maxAngle), 22.5];
 if (abs _deltaAngle > _maxAngle) exitWith {false};
 
 // var added at EH killed
-private _timeToRespawn = _unit getVariable [QGVAR(timeToRespawn), time];
-if (_timeToRespawn < time) exitWith {false};
+private _DelaySpawnNearbyUnits = _unit getVariable [QGVAR(delaySpawnNearbyUnits), time];
+if (_DelaySpawnNearbyUnits < time) exitWith {false};
 true

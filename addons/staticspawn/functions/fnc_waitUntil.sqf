@@ -26,9 +26,9 @@ _activate = true; // for testing, function above needs to be rewriten
 if (_activate) then {
 	private _groups = _logic getVariable ["groups", []];
 
-	if (!isServer && !hasInterface) exitWith {
-		[_logic, _groups] call FUNC(staticspawnInterval);
-	};
+	// if (!isServer && !hasInterface) exitWith {
+	// 	[_logic, _groups] call FUNC(staticspawnInterval);
+	// };
 	
 	private _activationTriggers = _logic getVariable [QGVAR(activationTriggers) ,[]];
 	private _includeAir = _logic getVariable [QGVAR(includeAir), false];
@@ -37,6 +37,8 @@ if (_activate) then {
 	private _activateCondition = _logic getVariable [QGVAR(activateCondition), {true}];
 	private _executionCodeUnit = _logic getVariable [QGVAR(executionCodeUnit), {}];
 	private _executionCodeGroup = _logic getVariable [QGVAR(executionCodeGroup), {}];
+	private _maxUnitsPerdistance = _logic getVariable [QGVAR(maxUnitsPerdistance), 1];
+	private _tickets = _logic getVariable [QGVAR(tickets), 1];
 
 	private _owner = call MAI_fnc_HCfind;
 	[
@@ -48,7 +50,9 @@ if (_activate) then {
 		_checkBuildings,
 		_activateCondition,
 		_executionCodeUnit,
-		_executionCodeGroup
+		_executionCodeGroup,
+		_maxUnitsPerdistance,
+		_tickets
 	] remoteExecCall [QFUNC(firstState),_owner,false];
 } else {
 	[{_this call QFUNC(WaitUntil)},

@@ -16,28 +16,27 @@
  * Public: No
  */
 
-params [["_unit", objNull], ["_logic", objNull], ["_unitArray", []]];
+params [["_unit", objNull], ["_logic", objNull], ["_deleteBody", true], ["_waitTime", 0]];
+private _unitArray = _unit getVariable [QGVAR(unitArray), []];
 private _groupID = _unit getVariable [QGVAR(groupID), -1];
 private _groups = _logic getVariable [QGVAR(groups), []];
-private _side = _unit getVariable [QGVAR(AF_side), side _unit];
+private _side = _unit getVariable [QGVAR(side), side _unit];
 private _active = _logic getVariable [QGVAR(active), true];
 private _group = group _unit;
-deleteVehicle _unit;
-if (_groups isEqualTo []) exitWith {
-	_groups pushBack [_groupID, _side, [_unitArray], group _unit];
-	if !(_active) then {
-		_logic setVariable [QGVAR(active), true];
-		_logic call FUNC(loop);
-	};
+
+if (_deleteBody) then {
+	deleteVehicle _unit;
 };
-private _groupIndex = _groups findIf {_x select 0 isEqualTo _groupID};
-if (_groupIndex isEqualTo -1) exitWith {
-	_groups pushBack [_groupID, _side, [_unitArray], group _unit];
-	if !(_active) then {
-		_logic setVariable [QGVAR(active), true];
-		_logic call FUNC(loop);
-	};
+
+private _tickets = _unit getVariable [QGVAR(tickets), 1];
+_unitArray set [14, _tickets];
+
+if (_waitTime <= 0) exitWith {
+	[_logic, _unitArray, _groupID, _group, _groups, _side] call FUNC(despawnAddToLogic);
 };
-private _groupArray = _groups select _groupIndex;
-_groupArray params ["_groupID", "_side", "_units", ["_group", grpNull]];
-_units pushBack _unitArray;
+[
+	{_this call FUNC(despawnAddToLogic)},
+	[_logic, _unitArray, _groupID, _group, _groups, _side],
+	_waitTime
+] call CBA_fnc_waitAndExecute;
+

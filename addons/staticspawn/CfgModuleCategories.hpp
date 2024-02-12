@@ -58,6 +58,16 @@ class CfgVehicles
 		class Attributes: AttributesBase
 		{
 			// Arguments shared by specific module type (have to be mentioned in order to be present)
+			class GVAR(tickets): Default
+  			{
+				displayName = "$STR_MAI_tickets";
+				tooltip = "$STR_MAI_tickets";
+				defaultValue = "1";
+				property = QGVAR(tickets);
+				expression = "_this setVariable ['%s',_value];";
+				typeName = "NUMBER";
+				control = "EditShort";
+			};
 			class GVAR(sphereSize): Default
   			{
 				displayName = "$STR_MAI_sphereSize";

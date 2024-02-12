@@ -25,6 +25,7 @@ private _sphereBackDistance = _logic getVariable [QGVAR(sphereBackDistance), 30]
 private _sphereDespawnDistance = _logic getVariable [QGVAR(sphereDespawnDistance), 50];
 private _checkVisibility = _logic getVariable [QGVAR(checkVisibility), true];
 private _forceSpawnDistance = _logic getVariable [QGVAR(forceSpawnDistance), 0.35];
+private _tickets = _logic getVariable [QGVAR(tickets), 1];
 private _groups = [];
 private _vehiclesInfo = [];
 //private _vehiclesToDelete = [];
@@ -128,6 +129,7 @@ private _vehiclesInfo = [];
 			private _sphereDespawnDistanceUnit = _unit getVariable [QGVAR(sphereDespawnDistance), _sphereDespawnDistance];
 			private _checkVisibilityUnit = _unit getVariable [QGVAR(checkVisibility), _checkVisibility];
 			private _forceSpawnDistanceUnit = _unit getVariable [QGVAR(forceSpawnDistance), _forceSpawnDistance];
+			private _ticketsUnit = _unit getVariable [QGVAR(tickets), _tickets];
 			_units pushBack [
 				_type,
 				_loadout,
@@ -142,7 +144,8 @@ private _vehiclesInfo = [];
 				_sphereBackDistanceUnit,
 				_sphereDespawnDistanceUnit,
 				_checkVisibilityUnit,
-				_forceSpawnDistanceUnit
+				_forceSpawnDistanceUnit,
+				_ticketsUnit
 			];
 		};
 		deleteVehicle _unit;

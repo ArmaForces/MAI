@@ -25,7 +25,9 @@ params [
 	["_checkBuildings", true],
 	["_activateCondition", {true}],
 	["_executionCodeUnit", {}],
-	["_executionCodeGroup", {}]
+	["_executionCodeGroup", {}],
+	["_maxUnitsPerdistance", 1],
+	["_tickets", 1]
 ];
 
 if (_logic isEqualTo objNull) exitWith {};
@@ -37,5 +39,7 @@ _logic setVariable [QGVAR(checkBuildings), _checkBuildings];
 _logic setVariable [QGVAR(activateCondition), _activateCondition];
 _logic setVariable [QGVAR(executionCodeUnit), _executionCodeUnit];
 _logic setVariable [QGVAR(executionCodeGroup), _executionCodeGroup];
+_logic setVariable [QGVAR(maxUnitsPerdistance), _maxUnitsPerdistance];
+_logic setVariable [QGVAR(tickets), _tickets];
 
 [_logic] call FUNC(loop);
