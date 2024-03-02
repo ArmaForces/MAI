@@ -68,6 +68,18 @@ class CfgVehicles
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
+
+			class GVAR(respawnDelay): Default
+  			{
+				displayName = "$STR_MAI_respawnDelay";
+				tooltip = "$STR_MAI_respawnDelay";
+                property = QGVAR(respawnDelay);
+                defaultValue = "[10,30,45]";
+				expression = "_this setVariable ['%s', _value];";
+                typeName = "ARRAY";
+				control = "Timeout";
+            };
+
 			class GVAR(sphereSize): Default
   			{
 				displayName = "$STR_MAI_sphereSize";

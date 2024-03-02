@@ -9,8 +9,8 @@
         <Polish>Dystans sprawdzania obecności graczy</Polish>
     </Key>
     <Key ID="STR_MAI_sphereDespawnDistance">
-        <Original>Despawn distance</Original>
-        <Polish>Dystans despawnu</Polish>
+        <Original>Despawn distance, added to spawn distance.</Original>
+        <Polish>Dystans despawnu, dodany do dystansu spawnu.</Polish>
     </Key>
     <Key ID="STR_MAI_sphereDespawnDistanceShort">
         <Original>The distance of checking the presence of players above which units will be removed. Added to spawn value.</Original>
@@ -25,11 +25,15 @@
         <Polish>Nieaktywne</Polish>
     </Key>
     <Key ID="STR_MAI_sphereBackDistance">
-        <Original>Offset checking</Original>
-        <Polish>Przsunięcie sprawdzania</Polish>
+        <Original>Minimum distance of the player to the bot, below which the bot will appear / Offset checkingShifting the checking center of nearby players in the opposite direction to the bot's direction.</Original>
+        <Polish>Minimalny dystans gracza do bota, poniżej którego bot się pojawi / Przsunięcie środka sprawdzania pobliskich graczy w przeciwnym kierunku do kierunku bota.</Polish>
     </Key>
     <Key ID="STR_MAI_sphereBackDistanceShort">
         <Original>How far back will players be checked.</Original>
         <Polish>Jak daleko do tyłu będzie sprawdzane obecność graczy.</Polish>
+    </Key>
+    <Key ID="STR_MAI_respawnDelay">
+        <Original>How long after death can a bot respawn, if it has tickets.</Original>
+        <Polish>Po jakim czasie od śmierci bot może ponownie się odrodzić, jeśli posiada tickety.</Polish>
     </Key>
 </Project>
