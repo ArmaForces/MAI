@@ -17,10 +17,12 @@ if (!isMultiplayer) exitWith {0};
 if (!isServer) exitWith {clientOwner};
 private _owner = 2;
 private _allHCs = entities "HeadlessClient_F";
+
 {
 	_owner = owner _x;
 	if !(_owner isEqualTo 2) exitWith {};
 }forEach _allHCs;
+
 if (_owner isEqualTo 0) then {
 	_owner = 2;
 };

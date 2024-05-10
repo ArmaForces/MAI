@@ -23,7 +23,7 @@ _vehicleHitPoints deleteAt 1;
 // vehicle skin
 private _vehCustom = ([_vehicle] call BIS_fnc_getVehicleCustomization) select 0;
 // ammunition
-private _vehAmmo = magazinesAllTurrets vehicle player; 
+private _vehAmmo = magazinesAllTurrets _vehicle; 
 {
 	_x resize 3;
 } forEach _vehAmmo;

@@ -20,11 +20,11 @@ if (_logic isEqualTo objNull) exitWith {
 	diag_log text "[MAI_fnc_checkActivateConditions] logic is objNull, exit script"
 };
 
-private _forceActivate = _logic getVariable ["forceActivate", false];
-private _activationTriggers = _logic getVariable ["activationTriggers",[]];
-private _activateCondition = _logic getVariable ["activateCondition", {true}];
-private _activation = _logic getVariable ["activation", 1000];
-private _includeAir = _logic getVariable ["includeAir", false];
+private _forceActivate = _logic getVariable [QGWAR(forceActivate), false];
+private _activationTriggers = _logic getVariable [QGWAR(activationTriggers),[]];
+private _activateCondition = _logic getVariable [QGWAR(activateCondition), {true}];
+private _activation = _logic getVariable [QGWAR(activation), 1000];
+private _includeAir = _logic getVariable [QGWAR(includeAir), false];
 
 private _activated = false;
 if (_forceActivate) then {
@@ -57,7 +57,7 @@ if (_forceActivate) then {
 };
 
 if (_activated) then {
-	private _deleteTrigger = _logic getVariable ["deleteTrigger", false];
+	private _deleteTrigger = _logic getVariable [QGWAR(deleteTrigger), false];
 	if (_deleteTrigger) then {
 		[
 			{
