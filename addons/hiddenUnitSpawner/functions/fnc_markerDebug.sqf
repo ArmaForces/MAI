@@ -8,4 +8,4 @@ _marker setMarkerColorLocal "ColorBlack";
 _marker setMarkerShapeLocal "RECTANGLE";
 _marker setMarkerSizeLocal [23, 23];
 _marker setMarkerAlphaLocal 0.5;
-//AF_debugMarkers pushBack _marker;
+//QGVAR(AF_debugMarkers) pushBack _marker;

@@ -2,7 +2,7 @@
 
 params [["_mapBlacklist", []], ["_distance", 750]];
 if (_mapBlacklist isEqualTo []) exitWith {
-	_mapBlacklist = + AF_mapBlacklist;
+	_mapBlacklist = + QGVAR(mapBlacklist);
 	[
 		{_this call FUNC(mapPosCleanup)},
 		[_mapBlacklist, _distance]
