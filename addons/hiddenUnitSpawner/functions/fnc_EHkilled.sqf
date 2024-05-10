@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-systemChat "test EHkilled";
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 private _tickets = _unit getVariable [QGVAR(tickets), 1];
 systemChat str _tickets;

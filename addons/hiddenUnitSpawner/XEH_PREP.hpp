@@ -14,3 +14,5 @@ PREP(findHiddenPos);
 PREP(EHinit);
 PREP(EHkilled);
 PREP(checkNearDeadUnit);
+PREP(EHprojectileExploded);
+PREP(EHfiredExplosives);
