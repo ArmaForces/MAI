@@ -1,14 +1,14 @@
-#define COMPONENT staticspawn
+#define COMPONENT hiddenUnitSpawner
 #include "\z\afmf\addons\main\script_mod.hpp"
 
 #define DEBUG_MODE_FULL
 #define DISABLE_COMPILE_CACHE
 
-#ifdef DEBUG_ENABLED_STATICSPAWN
+#ifdef DEBUG_ENABLED_hiddenUnitSpawner
     #define DEBUG_MODE_FULL
 #endif
-    #ifdef DEBUG_SETTINGS_STATICSPAWN
-    #define DEBUG_SETTINGS DEBUG_SETTINGS_STATICSPAWN
+    #ifdef DEBUG_SETTINGS_hiddenUnitSpawner
+    #define DEBUG_SETTINGS DEBUG_SETTINGS_hiddenUnitSpawner
 #endif
 
 #include "\z\afmf\addons\main\script_macros.hpp"

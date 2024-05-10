@@ -15,3 +15,5 @@
 #include "CfgEventHandlers.hpp"
 
 #include "CfgModuleCategories.hpp"
+
+#include "CfgEden.hpp"

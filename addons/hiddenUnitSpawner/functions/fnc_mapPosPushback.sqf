@@ -7,7 +7,7 @@ if (_findX == -1) exitWith {
 		AF_mapBlacklist pushBack [_posX, [_posY]];
 
 		if (AF_debug) then {
-			[_posX, _posY] call AF_fnc_markerDebug;
+			[_posX, _posY] call FUNC(markerDebug);
 		};
 	};
 	false
@@ -20,7 +20,7 @@ if (_findY == -1) exitWith {
 		_posYarray pushBack _posY;
 
 		if (AF_debug) then {
-			[_posX, _posY] call AF_fnc_markerDebug;
+			[_posX, _posY] call FUNC(markerDebug);
 		};
 	};
 	false
