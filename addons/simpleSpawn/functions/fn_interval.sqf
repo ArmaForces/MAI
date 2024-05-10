@@ -21,34 +21,34 @@ params [
 if (_logic isEqualTo objNull) exitWith {};
 if (_groups isEqualTo []) exitWith {};
 
-private _deleteVehicles = _logic getVariable ["deleteVehicles", false];
-private _vehicles = _logic getVariable ["vehicles", []];
-private _unitsPerInterval = _logic getVariable ["unitsPerInterval", 1];
-private _interval = _logic getVariable ["interval", 0.1];
-private _executionCodeVehicle = _logic getVariable ["executionCodeVehicle", {}];
-private _checkBuildings = _logic getVariable ["checkBuildings", true];
+private _deleteVehicles = _logic getVariable [QGVAR(deleteVehicles), false];
+private _vehicles = _logic getVariable [QGVAR(vehicles), []];
+private _unitsPerInterval = _logic getVariable [QGVAR(unitsPerInterval), 1];
+private _interval = _logic getVariable [QGVAR(interval), 0.1];
+private _executionCodeVehicle = _logic getVariable [QGVAR(executionCodeVehicle), {}];
+private _checkBuildings = _logic getVariable [QGVAR(checkBuildings), true];
 
 // spawn vehicles
 if (_deleteVehicles && !(_vehiclesInfo isEqualTo [])) exitWith {
 	private _vehiclesInfoNew = +_vehiclesInfo;
 	for "_i" from 1 to (_unitsPerInterval min count _vehiclesInfoNew) do {
 		private _vehInfo = _vehiclesInfoNew deleteAt 0;
-		private _vehicle = _vehInfo call MAI_fnc_createVehicleFromInfo;
+		private _vehicle = _vehInfo call EFUNC(main, createVehicleFromInfo);
 		[_vehicle] call _executionCodeVehicle;
 		_vehicles pushBack _vehicle;
-		_logic setVariable ["vehicles", _vehicles];
+		_logic setVariable [QGVAR(vehicles), _vehicles];
 	};
 	[
 		{
-			_this call MAI_fnc_simpleSpawnInterval;
+			_this call FUNC(interval);
 		},
 		[_logic, _groups, _vehiclesInfoNew],
 		_interval
 	] call CBA_fnc_waitAndExecute;
 };
 
-private _executionCodeUnit = _logic getVariable ["executionCodeUnit", {}];
-private _executionCodePatrol = _logic getVariable ["executionCodePatrol", {}];
+private _executionCodeUnit = _logic getVariable [QGVAR(executionCodeUnit), {}];
+private _executionCodePatrol = _logic getVariable [QGVAR(executionCodePatrol), {}];
 
 private _spawnedUnits = _logic getVariable ["spawnedUnits", 0];
 
@@ -61,9 +61,9 @@ if (_group isEqualTo grpNull) then {
 	_group = createGroup [_side, true];
 	_groupArray set [7, _group];
 	[_group] call _executionCodePatrol;
-	private _spawnedGroups = _logic getVariable ["spawnedGroups", []];
+	private _spawnedGroups = _logic getVariable [QGVAR(spawnedGroups), []];
 	_spawnedGroups pushBack _group;
-	_logic setVariable ["spawnedGroups", _spawnedGroups];
+	_logic setVariable [QGVAR(spawnedGroups), _spawnedGroups];
 	{
 		_x params ["_wPos", "_wType", "_wTimeout", "_behaviourWp"];
 		private _wp =_group addWaypoint [_wPos, 0];
@@ -89,15 +89,15 @@ while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 				_vehicle isKindOf "StaticWeapon" &&
 				{!(alive _building isEqualTo _buildingStatus)}
 			}) exitWith {};
-			_unit = [_group, _type, _pos, _dir, 0, false] call MAI_fnc_spawnAI;
+			_unit = [_group, _type, _pos, _dir, 0, false] call EFUNC(main, spawnAI);
 			_spawnedUnits = _spawnedUnits + 1;
 			_unit setUnitLoadout _loadout;
 			_group addVehicle _vehicle;
-			[_unit, _vehicle, _role, _cargoIndex] call MAI_fnc_moveInVehicleRole;
+			[_unit, _vehicle, _role, _cargoIndex] call EFUNC(main, moveInVehicleRole);
 		};
 	} else {
 		if (!_checkBuildings || alive _building isEqualTo _buildingStatus) then {
-			_unit = [_group, _type, _pos, _dir] call MAI_fnc_spawnAI;
+			_unit = [_group, _type, _pos, _dir] call EFUNC(main, spawnAI);
 			_spawnedUnits = _spawnedUnits + 1;
 			_unit setUnitLoadout _loadout;
 			_unit setUnitPos _stance;
@@ -123,10 +123,10 @@ while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 };
 
 if (_groups isEqualTo []) exitWith {
-	private _deactivation = _logic getVariable ["deactivation", -1];
+	private _deactivation = _logic getVariable [QGVAR(deactivation), -1];
 	if (_deactivation >= 0) then {
 		[
-			{_this call MAI_fnc_simpleSpawnDespawn},
+			{_this call FUNC(despawn)},
 			[_logic],
 			1
 		]call CBA_fnc_waitAndExecute;
@@ -135,7 +135,7 @@ if (_groups isEqualTo []) exitWith {
 
 [
 	{
-		_this call MAI_fnc_simpleSpawnInterval;
+		_this call FUNC(interval);
 	},
 	_this,
 	_interval

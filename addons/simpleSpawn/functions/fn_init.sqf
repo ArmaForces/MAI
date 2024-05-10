@@ -44,21 +44,21 @@ private _groupSync = [];
 	};
 } forEach _synchronizedObjects;
 
-_logic setVariable ["activationTriggers",_activationTriggers];
+_logic setVariable [QGVAR(activationTriggers),_activationTriggers];
 
-private _groupsArray = [_groupSync] call MAI_fnc_simpleSpawnGetGroups;
+private _groupsArray = [_groupSync] call FUNC(GetGroups);
 _groupsArray params ["_groups", "_vehiclesInfo", "_vehiclesToDelete"];
-_logic setVariable ["vehiclesInfo", _vehiclesInfo];
+_logic setVariable [QGVAR(vehiclesInfo), _vehiclesInfo];
 
-private _deleteVehicles = _logic getVariable ["deleteVehicles", false];
+private _deleteVehicles = _logic getVariable [QGVAR(deleteVehicles), false];
 if (_deleteVehicles) then {
 	{deleteVehicle _x} forEach _vehiclesToDelete;
 };
 
-_logic setVariable ["groups", _groups];
+_logic setVariable [QGVAR(groups), _groups];
 
 [
-	{_this call MAI_fnc_simpleSpawnWaitUntil},
+	{_this call FUNC(WaitUntil)},
 	[_logic],
 	1
 ]call CBA_fnc_waitAndExecute;

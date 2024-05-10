@@ -19,15 +19,15 @@ params [
 
 if (_logic isEqualTo objNull) exitWith {};
 
-private _spawnedGroups = _logic getVariable ["spawnedGroups", []];
+private _spawnedGroups = _logic getVariable [QGVAR(spawnedGroups), []];
 // check for every group if there are any allive units.
 private _aliveGroupIndex = _spawnedGroups findIf {
 	(units _x findIf {alive _x}) != -1
 };
 if (_aliveGroupIndex == -1) exitWith {}; // no alive units left.
 
-private _activation = _logic getVariable ["activation", 750];
-private _deactivation = _logic getVariable ["deactivation", 750];
+private _activation = _logic getVariable [QGVAR(activation), 750];
+private _deactivation = _logic getVariable [QGVAR(deactivation), 750];
 private _deactivationDistance = _activation + _deactivation;
 
 private _nearUnits = _logic nearEntities ["AllVehicles", _deactivationDistance];
@@ -47,18 +47,18 @@ if !(_activateByDistance) exitWith {
 	[
 		{
 			params [["_logic", objNull, [objNull]]];
-			private _spawnedGroups = _logic getVariable ["spawnedGroups", []];
-			private _groupsArray = [_spawnedGroups] call MAI_fnc_simpleSpawnGetGroups;
+			private _spawnedGroups = _logic getVariable [QGVAR(spawnedGroups), []];
+			private _groupsArray = [_spawnedGroups] call FUNC(getGroups);
 			_groupsArray params ["_groups", "_vehiclesInfo", "_vehiclesToDelete"];
-			_logic setVariable ["groups", _groups];
-			_logic setVariable ["vehiclesInfo", _vehiclesInfo];
-			private _vehicles = _logic getVariable ["vehicles", []];
+			_logic setVariable [QGVAR(groups), _groups];
+			_logic setVariable [QGVAR(vehiclesInfo), _vehiclesInfo];
+			private _vehicles = _logic getVariable [QGVAR(vehicles), []];
 			{
 				deleteVehicle _x;
 			} forEach _vehicles;
-			_logic setVariable ["vehicles", nil];
+			_logic setVariable [QGVAR(vehicles), nil];
 			[
-				{_this call MAI_fnc_simpleSpawnWaitUntil},
+				{_this call FUNC(WaitUntil)},
 				_this,
 				random [0.9,1,1.1]
 			] call CBA_fnc_waitAndExecute;
@@ -69,7 +69,7 @@ if !(_activateByDistance) exitWith {
 };
 
 [
-	{_this call MAI_fnc_simpleSpawnDespawn},
+	{_this call call FUNC(despawn)},
 	_this,
 	random [0.9,1,1.1]
 ] call CBA_fnc_waitAndExecute;

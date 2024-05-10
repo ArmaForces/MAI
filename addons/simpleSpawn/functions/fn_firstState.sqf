@@ -33,20 +33,20 @@ params [
 ];
 
 if (_logic isEqualTo objNull) exitWith {};
-_logic setVariable ["activationTriggers", _activationTriggers];
-_logic setVariable ["groups", _groups];
-_logic setVariable ["vehiclesInfo", _vehiclesInfo];
-_logic setVariable ["activation", _activation];
-_logic setVariable ["deactivation", _deactivation];
-_logic setVariable ["includeAir", _includeAir];
-_logic setVariable ["forceActivate", _forceActivate];
-_logic setVariable ["checkBuildings", _checkBuildings];
-_logic setVariable ["activateCondition", _activateCondition];
-_logic setVariable ["interval", _interval];
-_logic setVariable ["deleteVehicles", _deleteVehicles];
-_logic setVariable ["unitsPerInterval", _unitsPerInterval];
-_logic setVariable ["executionCodeUnit", _executionCodeUnit];
-_logic setVariable ["executionCodePatrol", _executionCodePatrol];
-_logic setVariable ["executionCodeVehicle", _executionCodeVehicle];
+_logic setVariable [QGVAR(activationTriggers), _activationTriggers];
+_logic setVariable [QGVAR(groups), _groups];
+_logic setVariable [QGVAR(vehiclesInfo), _vehiclesInfo];
+_logic setVariable [QGVAR(activation), _activation];
+_logic setVariable [QGVAR(deactivation), _deactivation];
+_logic setVariable [QGVAR(includeAir), _includeAir];
+_logic setVariable [QGVAR(forceActivate), _forceActivate];
+_logic setVariable [QGVAR(checkBuildings), _checkBuildings];
+_logic setVariable [QGVAR(activateCondition), _activateCondition];
+_logic setVariable [QGVAR(interval), _interval];
+_logic setVariable [QGVAR(deleteVehicles), _deleteVehicles];
+_logic setVariable [QGVAR(unitsPerInterval), _unitsPerInterval];
+_logic setVariable [QGVAR(executionCodeUnit), _executionCodeUnit];
+_logic setVariable [QGVAR(executionCodePatrol), _executionCodePatrol];
+_logic setVariable [QGVAR(executionCodeVehicle), _executionCodeVehicle];
 
-[_logic, _groups, _vehiclesInfo] call MAI_fnc_simpleSpawnInterval;
+[_logic, _groups, _vehiclesInfo] call call FUNC(interval);
