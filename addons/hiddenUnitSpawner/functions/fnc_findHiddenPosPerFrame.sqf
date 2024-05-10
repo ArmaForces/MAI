@@ -73,4 +73,4 @@ private _newUnit = [_group, _type, _position, _position getDir _averagePos] call
 if !(_loadout isEqualTo []) then {
 	_newUnit setUnitLoadout _loadout;
 };
-[_newUnit, _tickets - 1] call FUNC(hiddenPosEH);
+_newUnit setVariable [QGVAR(tickets), _tickets];

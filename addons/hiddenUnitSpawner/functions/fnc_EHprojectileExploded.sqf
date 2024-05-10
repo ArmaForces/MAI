@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 params [["_projectile", objNull]];
 
 _projectile addEventHandler ["Explode", {
@@ -7,19 +9,19 @@ _projectile addEventHandler ["Explode", {
 	private _indirectHitRange = getNumber (configfile >> "CfgAmmo" >> _ammo >> "indirectHitRange");
 	private _killRadius = _indirectHitRange + _indirectHit * 0.35 min _indirectHitRange*4;
 	if (_killRadius < 1) exitWith {};
-	QGVAR(explosionList) pushBack [_pos, _killRadius];
+	GVAR(explosionList) pushBack [_pos, _killRadius];
 
 	// quick antispam failsafe
-	if (count QGVAR(explosionList) > 200) then {
-		QGVAR(explosionList) deleteAt 0;
+	if (count GVAR(explosionList) > 200) then {
+		GVAR(explosionList) deleteAt 0;
 	};
 
 	// delete entry after _killRadius as seconds
 	[
 		{
-			private _index = QGVAR(explosionList) findIf {_x isEqualTo _this};
+			private _index = GVAR(explosionList) findIf {_x isEqualTo _this};
 			if (_index <= -1) exitWith {};
-			QGVAR(explosionList) deleteAt _index;
+			GVAR(explosionList) deleteAt _index;
 		},
 		[_pos, _killRadius],
 		_killRadius
