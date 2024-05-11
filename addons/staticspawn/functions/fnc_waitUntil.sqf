@@ -57,7 +57,7 @@ if (_activate) then {
 } else {
 	[{_this call QFUNC(WaitUntil)},
 	_this,
-	random [0.9,1,1.1]
+	0.9 + random 0.2
 	] call CBA_fnc_waitAndExecute;
 };
 

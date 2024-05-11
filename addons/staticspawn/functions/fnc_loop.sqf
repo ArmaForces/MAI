@@ -22,7 +22,7 @@ params [
 if (_logic isEqualTo objNull) exitWith {};
 private _groups = _logic getVariable [QGVAR(groups), []];
 if (_groups isEqualTo []) exitWith {
-	systemChat "loop groups isEqualTo []";
+	// systemChat "loop groups isEqualTo []";
 	_logic setVariable [QGVAR(active), false];
 };
 

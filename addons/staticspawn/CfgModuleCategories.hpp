@@ -100,15 +100,15 @@ class CfgVehicles
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class GVAR(checkVisibility): Checkbox
-            {
-                displayName = "$STR_MAI_checkVisibility";
-                tooltip = "$STR_MAI_checkVisibilityShort";
-                property = QGVAR(checkVisibility);
-                defaultValue = "true";
-				expression = "_this setVariable ['%s', _value];";
-                typeName = "BOOL";
-            };
+			// class GVAR(checkVisibility): Checkbox
+            // {
+            //     displayName = "$STR_MAI_checkVisibility";
+            //     tooltip = "$STR_MAI_checkVisibilityShort";
+            //     property = QGVAR(checkVisibility);
+            //     defaultValue = "true";
+			// 	expression = "_this setVariable ['%s', _value];";
+            //     typeName = "BOOL";
+            // };
 			class GVAR(sphereBackDistance): Default
   			{
 				displayName = "$STR_MAI_sphereBackDistance";

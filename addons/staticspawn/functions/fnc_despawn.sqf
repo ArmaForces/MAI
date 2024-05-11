@@ -28,15 +28,37 @@ if (_deleteBody) then {
 	deleteVehicle _unit;
 };
 
+// _unitArray params [
+// 	"_type",
+// 	"_loadout",
+// 	"_pos",
+// 	"_dir",
+// 	"_stance",
+// 	"_disabledAiFeatures",
+// 	"_vehicleArray",
+// 	"_building",
+// 	"_buildingStatus",
+// 	"_sphereSizeUnit",
+// 	"_sphereBackDistanceUnit",
+// 	"_sphereDespawnDistanceUnit",
+// 	"_checkVisibilityUnit",
+// 	"_forceSpawnDistanceUnit",
+// 	["_tickets", 1]
+// ];
+
 private _tickets = _unit getVariable [QGVAR(tickets), 1];
 _unitArray set [14, _tickets];
 
 if (_waitTime <= 0) exitWith {
 	[_logic, _unitArray, _groupID, _group, _groups, _side] call FUNC(despawnAddToLogic);
 };
+
+private _pos = _unitArray select 2;
+private _waitUntil = time + _waitTime;
+
 [
-	{_this call FUNC(despawnAddToLogic)},
-	[_logic, _unitArray, _groupID, _group, _groups, _side],
+	{_this call FUNC(checkRespawnConditionLoop)},
+	[_logic, _unitArray, _groupID, _group, _groups, _side, _pos, _waitUntil],
 	_waitTime
 ] call CBA_fnc_waitAndExecute;
 

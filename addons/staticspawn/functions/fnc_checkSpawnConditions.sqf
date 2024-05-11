@@ -18,6 +18,12 @@
 
 params [["_logic", objNull], ["_unit", objNull], ["_pos", [0,0,0]], ["_dir", 0]];
 
+// force spawn when player is nearby
+private _sphereBackDistance = _logic getVariable [QGVAR(sphereBackDistance), 30];
+private _nearplayers = _pos nearEntities ["allVehicles", _sphereBackDistance];
+private _playerIndex = _nearplayers findIf {isPlayer _x};
+if (_playerIndex > -1) exitWith {false};
+
 // check if spawn pos of other units in group is more than set in module
 private _unitPos = _unit getVariable [QGVAR(pos), getposATL _unit];
 private _distance = _unitPos distance _pos;
