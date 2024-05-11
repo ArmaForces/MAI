@@ -31,7 +31,7 @@ if (_activate) then {
 	private _interval = _logic getVariable [QGVAR(interval) ,[]];
 	private _unitsPerInterval = _logic getVariable [QGVAR(unitsPerInterval), []];
 	private _deleteVehicles = _logic getVariable [QGVAR(deleteVehicles), false];
-	private _activation = _logic getVariable [QGVAR(activation), 750];
+	private _activationDistance = _logic getVariable [QGVAR(activationDistance), 750];
 	private _deactivation = _logic getVariable [QGVAR(deactivation), -1];
 	private _includeAir = _logic getVariable [QGVAR(includeAir), false];
 	private _forceActivate = _logic getVariable [QGVAR(forceActivate), false];
@@ -50,7 +50,7 @@ if (_activate) then {
 		_interval,
 		_unitsPerInterval,
 		_deleteVehicles,
-		_activation,
+		_activationDistance,
 		_deactivation,
 		_includeAir,
 		_forceActivate,

@@ -26,9 +26,9 @@ private _aliveGroupIndex = _spawnedGroups findIf {
 };
 if (_aliveGroupIndex == -1) exitWith {}; // no alive units left.
 
-private _activation = _logic getVariable [QGVAR(activation), 750];
+private _activationDistance = _logic getVariable [QGVAR(activationDistance), 750];
 private _deactivation = _logic getVariable [QGVAR(deactivation), 750];
-private _deactivationDistance = _activation + _deactivation;
+private _deactivationDistance = _activationDistance + _deactivation;
 
 private _nearUnits = _logic nearEntities ["AllVehicles", _deactivationDistance];
 

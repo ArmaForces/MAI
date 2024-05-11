@@ -21,7 +21,7 @@ params [
 	["_interval", 0.1],
 	["_unitsPerInterval", 1],
 	["_deleteVehicles", false],
-	["_activation", 750],
+	["_activationDistance", 750],
 	["_deactivation", -1],
 	["_includeAir", false],
 	["_forceActivate", true],
@@ -36,7 +36,7 @@ if (_logic isEqualTo objNull) exitWith {};
 _logic setVariable [QGVAR(activationTriggers), _activationTriggers];
 _logic setVariable [QGVAR(groups), _groups];
 _logic setVariable [QGVAR(vehiclesInfo), _vehiclesInfo];
-_logic setVariable [QGVAR(activation), _activation];
+_logic setVariable [QGVAR(activationDistance), _activationDistance];
 _logic setVariable [QGVAR(deactivation), _deactivation];
 _logic setVariable [QGVAR(includeAir), _includeAir];
 _logic setVariable [QGVAR(forceActivate), _forceActivate];
