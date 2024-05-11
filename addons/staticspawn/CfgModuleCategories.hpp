@@ -171,7 +171,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_activateCondition";
                 tooltip = "$STR_MAI_activateConditionShort";
-                property = QGVAR(activateCondition);
+                property = QEGVAR(main, activateCondition);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "'true'";
