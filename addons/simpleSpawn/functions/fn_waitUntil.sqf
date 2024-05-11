@@ -59,7 +59,7 @@ if (_activate) then {
 		_executionCodeUnit,
 		_executionCodePatrol,
 		_executionCodeVehicle
-	] remoteExecCall [QGWAR(FirstState),_owner,false];
+	] remoteExecCall [QGVAR(FirstState),_owner,false];
 }else
 {
 	[{_this call MAI_fnc_simpleSpawnWaitUntil},

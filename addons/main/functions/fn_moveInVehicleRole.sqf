@@ -22,9 +22,9 @@ params [
 if (!alive _unit || !alive _vehicle) exitWith {};
 if !(isNull objectParent _unit) exitWith {}; // unit in vehicle;
 
-private _timesTried = _unit getVariable [QGWAR(timesTried), 0];
+private _timesTried = _unit getVariable [QGVAR(timesTried), 0];
 if (_timesTried >= 5) exitWith {};
-_unit setVariable [QGWAR(timesTried), _timesTried + 1];
+_unit setVariable [QGVAR(timesTried), _timesTried + 1];
 private _role = toLower (_assignedRole select 0);
 
 if (_role isEqualTo "driver") exitWith {

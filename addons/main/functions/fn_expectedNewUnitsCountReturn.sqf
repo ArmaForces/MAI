@@ -11,5 +11,5 @@
 
 */
 params [["_unitsCountChange", 0]];
-private _expectedNewUnitsCount = missionNameSpace getVariable [QGWAR(expectedNewUnitsCount), 0];
-GWAR(expectedNewUnitsCount) = _expectedNewUnitsCount + _unitsCountChange;
+private _expectedNewUnitsCount = missionNameSpace getVariable [QGVAR(expectedNewUnitsCount), 0];
+GVAR(expectedNewUnitsCount) = _expectedNewUnitsCount + _unitsCountChange;
