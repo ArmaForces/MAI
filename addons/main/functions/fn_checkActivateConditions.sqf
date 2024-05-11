@@ -21,7 +21,7 @@ if (_logic isEqualTo objNull) exitWith {
 	false
 };
 
-// check if player is in minimal distance
+// check if players are is in minimal distance
 private _activationDistance = _logic getVariable [QGVAR(activationDistance), 0];
 private _includeAir = _logic getVariable [QGVAR(includeAir), false];
 private _activateByDistance = true;
