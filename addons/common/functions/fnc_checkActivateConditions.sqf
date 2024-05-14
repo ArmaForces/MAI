@@ -14,7 +14,12 @@
 #include "script_component.hpp"
 
 params [
-	["_logic",objNull,[objNull]]
+	["_logic",objNull,[objNull]],
+	["_activationDistance", 0],
+	["_includeAir", false],
+	["_activationTriggers", []],
+	["_activateCondition", {true}],
+	["_deleteTrigger", false]
 ];
 
 if (_logic isEqualTo objNull) exitWith {
@@ -23,8 +28,6 @@ if (_logic isEqualTo objNull) exitWith {
 };
 
 // check if players are is in minimal distance
-private _activationDistance = _logic getVariable [QGVAR(activationDistance), 0];
-private _includeAir = _logic getVariable [QGVAR(includeAir), false];
 private _activateByDistance = true;
 
 if (_activationDistance > 0) then {
@@ -38,20 +41,14 @@ if (_activationDistance > 0) then {
 if !(_activateByDistance) exitWith {false};
 
 // check synchronized triggers
-private _activationTriggers = _logic getVariable [QGVAR(activationTriggers),[]];
 if !((_activationTriggers select {!triggerActivated _x}) isEqualTo []) exitWith {false};
 
 // check custom activation code
-private _activateCondition = _logic getVariable [QGVAR(activateCondition), {true}];
 if !(call _activateCondition) exitWith {false};
-
-// ????
-// private _forceActivate = _logic getVariable [QGVAR(forceActivate), false];
 
 // all checks done, activate script
 
 // check if delete triggers after activation
-private _deleteTrigger = _logic getVariable [QGVAR(deleteTrigger), false];
 if (_deleteTrigger) then {
 	[
 		{

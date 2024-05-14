@@ -5,3 +5,4 @@ PREP(init);
 PREP(initCall);
 PREP(interval);
 PREP(waitUntil);
+PREP(checkActivateConditions);
