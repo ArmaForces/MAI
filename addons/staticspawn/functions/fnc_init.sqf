@@ -43,7 +43,7 @@ private _groupSync = [];
 	};
 } forEach _synchronizedObjects;
 
-_logic setVariable ["activationTriggers",_activationTriggers];
+_logic setVariable [QGVAR(activationTriggers),_activationTriggers];
 
 private _groupsArray = [_groupSync, _logic] call FUNC(getGroups);
 _groupsArray params ["_groups", "_vehiclesInfo"];
