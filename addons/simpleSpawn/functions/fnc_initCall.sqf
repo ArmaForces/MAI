@@ -24,7 +24,7 @@ switch _mode do {
 		//["init", 0] call BIS_fnc_3DENNotification;
 		//};
 		[
-			{_this call MAI_fnc_simpleSpawnInit},
+			{_this call FUNC(init)},
 			_input
 		] call CBA_fnc_execNextFrame;
 	};
