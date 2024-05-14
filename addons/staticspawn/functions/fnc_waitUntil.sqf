@@ -20,44 +20,44 @@ params [["_logic",objNull]];
 
 if (_logic isEqualTo objNull) exitWith {};
 
-private _activate = [_logic] call EFUNC(common,checkActivateConditions);
+private _activate = [_logic] call FUNC(checkActivateConditions);
 
-if (_activate) then {
-	private _groups = _logic getVariable [QEGVAR(main,groups), []];
-
-	// if (!isServer && !hasInterface) exitWith {
-	// 	[_logic, _groups] call FUNC(staticspawnInterval);
-	// };
-
-	private _activationTriggers = _logic getVariable [QEGVAR(main,activationTriggers) ,[]];
-	private _includeAir = _logic getVariable [QEGVAR(main,includeAir), false];
-	private _forceActivate = _logic getVariable [QGVAR(forceActivate), false];
-	private _checkBuildings = _logic getVariable [QGVAR(checkBuildings), true];
-	private _activateCondition = _logic getVariable [QEGVAR(main,activateCondition), {true}];
-	private _executionCodeUnit = _logic getVariable [QGVAR(executionCodeUnit), {}];
-	private _executionCodeGroup = _logic getVariable [QGVAR(executionCodeGroup), {}];
-	private _maxUnitsPerdistance = _logic getVariable [QGVAR(maxUnitsPerdistance), 1];
-	private _tickets = _logic getVariable [QGVAR(tickets), 1];
-
-	private _owner = call EFUNC(common,HCfind);
-	[
-		_logic,
-		_activationTriggers,
-		_groups,
-		_includeAir,
-		_forceActivate,
-		_checkBuildings,
-		_activateCondition,
-		_executionCodeUnit,
-		_executionCodeGroup,
-		_maxUnitsPerdistance,
-		_tickets
-	] remoteExecCall [QFUNC(firstState),_owner,false];
-} else {
-	[{_this call QFUNC(WaitUntil)},
+if !(_activate) exitWith {
+	[{_this call FUNC(waitUntil)},
 	_this,
 	0.9 + random 0.2
 	] call CBA_fnc_waitAndExecute;
 };
+
+private _groups = _logic getVariable [QEGVAR(main,groups), []];
+
+// if (!isServer && !hasInterface) exitWith {
+// 	[_logic, _groups] call FUNC(staticspawnInterval);
+// };
+
+private _activationTriggers = _logic getVariable [QEGVAR(main,activationTriggers) ,[]];
+private _includeAir = _logic getVariable [QEGVAR(main,includeAir), false];
+private _forceActivate = _logic getVariable [QGVAR(forceActivate), false];
+private _checkBuildings = _logic getVariable [QGVAR(checkBuildings), true];
+private _activateCondition = _logic getVariable [QEGVAR(main,activateCondition), {true}];
+private _executionCodeUnit = _logic getVariable [QGVAR(executionCodeUnit), {}];
+private _executionCodeGroup = _logic getVariable [QGVAR(executionCodeGroup), {}];
+private _maxUnitsPerdistance = _logic getVariable [QGVAR(maxUnitsPerdistance), 1];
+private _tickets = _logic getVariable [QGVAR(tickets), 1];
+
+private _owner = call EFUNC(common,HCfind);
+[
+	_logic,
+	_activationTriggers,
+	_groups,
+	_includeAir,
+	_forceActivate,
+	_checkBuildings,
+	_activateCondition,
+	_executionCodeUnit,
+	_executionCodeGroup,
+	_maxUnitsPerdistance,
+	_tickets
+] remoteExecCall [QFUNC(firstState),_owner,false];
 
 Nil

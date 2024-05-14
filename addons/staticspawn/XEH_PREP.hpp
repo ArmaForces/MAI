@@ -11,3 +11,4 @@ PREP(checkSpawnConditions);
 PREP(addEH);
 PREP(despawnAddToLogic);
 PREP(checkRespawnConditionLoop);
+PREP(checkActivateConditions);
