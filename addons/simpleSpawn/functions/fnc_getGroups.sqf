@@ -82,7 +82,7 @@ private _vehiclesToDelete = [];
 				private _vehicleIndex = -1;
 				_vehicleIndex = _vehiclesToDelete findIf {_x isEqualTo _vehicle};
 				if (_vehicleIndex == -1) then {
-					private _vehInfo = _vehicle call EFUNC(main, getVehicleInfo);
+					private _vehInfo = _vehicle call EFUNC(main,getVehicleInfo);
 					_vehiclesInfo pushBack _vehInfo;
 					_vehiclesToDelete pushBack _vehicle;
 					_vehicleIndex = count _vehiclesInfo - 1;
