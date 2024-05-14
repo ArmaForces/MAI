@@ -1,4 +1,5 @@
- /*
+#include "script_component.hpp"
+/*
 	MAI_fnc_simpleSpawnFirstState
 
 	Description:
@@ -12,7 +13,6 @@
 		None
 
 */
-#include "script_component.hpp"
 
 params [
 	["_logic", objNull],
@@ -50,4 +50,4 @@ _logic setVariable [QGVAR(executionCodeUnit), _executionCodeUnit];
 _logic setVariable [QGVAR(executionCodePatrol), _executionCodePatrol];
 _logic setVariable [QGVAR(executionCodeVehicle), _executionCodeVehicle];
 
-[_logic, _groups, _vehiclesInfo] call call FUNC(interval);
+[_logic, _groups, _vehiclesInfo] call FUNC(interval);

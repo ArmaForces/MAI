@@ -1,4 +1,5 @@
- /*
+#include "script_component.hpp"
+/*
 	MAI_fnc_simpleSpawnInterval
 
 	Description:
@@ -12,13 +13,12 @@
 		None
 
 */
-#include "script_component.hpp"
-
 params [
 	["_logic", objNull],
 	["_groups", []],
 	["_vehiclesInfo", []]
 ];
+
 if (_logic isEqualTo objNull) exitWith {};
 if (_groups isEqualTo []) exitWith {};
 
@@ -34,7 +34,7 @@ if (_deleteVehicles && !(_vehiclesInfo isEqualTo [])) exitWith {
 	private _vehiclesInfoNew = +_vehiclesInfo;
 	for "_i" from 1 to (_unitsPerInterval min count _vehiclesInfoNew) do {
 		private _vehInfo = _vehiclesInfoNew deleteAt 0;
-		private _vehicle = _vehInfo call EFUNC(main,createVehicleFromInfo);
+		private _vehicle = _vehInfo call EFUNC(common,createVehicleFromInfo);
 		[_vehicle] call _executionCodeVehicle;
 		_vehicles pushBack _vehicle;
 		_logic setVariable [QGVAR(vehicles), _vehicles];
@@ -90,15 +90,15 @@ while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 				_vehicle isKindOf "StaticWeapon" &&
 				{!(alive _building isEqualTo _buildingStatus)}
 			}) exitWith {};
-			_unit = [_group, _type, _pos, _dir, 0, false] call EFUNC(main,spawnAI);
+			_unit = [_group, _type, _pos, _dir, 0, false] call EFUNC(common,spawnAI);
 			_spawnedUnits = _spawnedUnits + 1;
 			_unit setUnitLoadout _loadout;
 			_group addVehicle _vehicle;
-			[_unit, _vehicle, _role, _cargoIndex] call EFUNC(main,moveInVehicleRole);
+			[_unit, _vehicle, _role, _cargoIndex] call EFUNC(common,moveInVehicleRole);
 		};
 	} else {
 		if (!_checkBuildings || alive _building isEqualTo _buildingStatus) then {
-			_unit = [_group, _type, _pos, _dir] call EFUNC(main,spawnAI);
+			_unit = [_group, _type, _pos, _dir] call EFUNC(common,spawnAI);
 			_spawnedUnits = _spawnedUnits + 1;
 			_unit setUnitLoadout _loadout;
 			_unit setUnitPos _stance;

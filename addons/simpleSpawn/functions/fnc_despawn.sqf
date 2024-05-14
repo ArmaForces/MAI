@@ -70,7 +70,7 @@ if !(_activateByDistance) exitWith {
 };
 
 [
-	{_this call call FUNC(despawn)},
+	{_this call FUNC(despawn)},
 	_this,
 	random [0.9,1,1.1]
 ] call CBA_fnc_waitAndExecute;

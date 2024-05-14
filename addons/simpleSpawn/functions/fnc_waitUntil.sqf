@@ -1,3 +1,4 @@
+#include "script_component.hpp"
  /*
 	mai_fnc_simpleSpawnWaitUntil
 
@@ -12,9 +13,6 @@
 		None
 
 */
-#include "script_component.hpp"
-
-systemChat str ["waitUntil"];
 params [["_logic",objNull]];
 
 if (_logic isEqualTo objNull) exitWith {};
@@ -31,9 +29,9 @@ if !(_activate) exitWith {
 private _groups = _logic getVariable [QGVAR(groups), []];
 private _vehiclesInfo = _logic getVariable [QGVAR(vehiclesInfo) ,[]];
 
-if (!isServer && !hasInterface) exitWith {
-	[_logic, _groups, _vehiclesInfo] call FUNC(interval);
-};
+// if (!isServer && !hasInterface) exitWith {
+// 	[_logic, _groups, _vehiclesInfo] call FUNC(interval);
+// };
 
 private _activationTriggers = _logic getVariable [QGVAR(activationTriggers) ,[]];
 private _interval = _logic getVariable [QGVAR(interval) ,[]];
@@ -49,29 +47,7 @@ private _executionCodeUnit = _logic getVariable [QGVAR(executionCodeUnit), {}];
 private _executionCodePatrol = _logic getVariable [QGVAR(executionCodePatrol), {}];
 private _executionCodeVehicle = _logic getVariable [QGVAR(executionCodeVehicle), {}];
 
-diag_log str GVAR(waitUntil);
-diag_log str [
-	_logic,
-	_activationTriggers,
-	_groups,
-	_vehiclesInfo,
-	_interval,
-	_unitsPerInterval,
-	_deleteVehicles,
-	_activationDistance,
-	_deactivation,
-	_includeAir,
-	_forceActivate,
-	_checkBuildings,
-	_activateCondition,
-	_executionCodeUnit,
-	_executionCodePatrol,
-	_executionCodeVehicle
-];
-
-private _owner = call EFUNC(main,HCfind);
-systemChat str _owner;
-diag_log str _owner;
+private _owner = call EFUNC(common,HCfind);
 
 [
 	_logic,
@@ -90,6 +66,5 @@ diag_log str _owner;
 	_executionCodeUnit,
 	_executionCodePatrol,
 	_executionCodeVehicle
-] remoteExecCall [QGVAR(FirstState),_owner, false];
-
+] remoteExecCall [QFUNC(FirstState),_owner, false];
 Nil
