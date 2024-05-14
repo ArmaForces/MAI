@@ -13,5 +13,4 @@
 
 
 #include "CfgEventHandlers.hpp"
-
 #include "CfgModuleCategories.hpp"
