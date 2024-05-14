@@ -1,1 +1,1 @@
-#include "\z\afmai\addons\staticspawn\script_component.hpp"
+#include "\z\afmai\addons\supressHide\script_component.hpp"

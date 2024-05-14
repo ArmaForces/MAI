@@ -16,7 +16,7 @@
  */
 
 params [["_unit", objNull]];
-private _hidden = _unit getVariable ["AF_unitHidden", false];
+private _hidden = _unit getVariable [QGVAR(unitHidden), false];
 if (_hidden) exitWith {};
 
 private _unitPos = unitPos _unit;
@@ -25,17 +25,17 @@ if (_unitPos isEqualTo "Down") exitWith {};
 if (_unitPos isEqualTo "Middle") then {
 	_unit playActionNow "PlayerProne";
 	_unit setUnitPos "Down";
-	_unit setVariable ["AF_unitStanceHide", _unitPos];
+	_unit setVariable [QGVAR(unitStanceHide), _unitPos];
 } else {
 	_unit playActionNow "PlayerCrouch";
 	_unit setUnitPos "Middle";
 	// _unit setUnitPos "Down";
-	_unit setVariable ["AF_unitStanceHide", "Up"];
+	_unit setVariable [QGVAR(unitStanceHide), "Up"];
 };
 
-_unit setVariable ["AF_unitHidden", true];
+_unit setVariable [QGVAR(unitHidden), true];
 
-private _suppressedTime = _unit getVariable ["AF_suppressedTime", 30];
+private _suppressedTime = _unit getVariable [QGVAR(suppressedTime), 30];
 
 [
 	{

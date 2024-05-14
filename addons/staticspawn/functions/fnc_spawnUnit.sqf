@@ -115,6 +115,8 @@ if !(_unit isEqualTo objNull) then {
 
 	[_unit] call FUNC(addEH);
 	[_unit] call FUNC(despawnLoop);
+	[_unit] call EFUNC(unitwiggle,init);
+	[_unit] call EFUNC(supressHide,init);
 
 	_unit setUnitLoadout _loadout;
 

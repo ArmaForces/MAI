@@ -16,7 +16,7 @@
  */
 
 params [["_unit", objNull], ["_suppressedTime", 30]];
-_unit setVariable ["AF_suppressedTime", _suppressedTime];
+_unit setVariable [QGVAR(suppressedTime), _suppressedTime];
 
 // disable lambs
 _unit setVariable ["lambs_danger_disableAI", true];
@@ -27,5 +27,4 @@ if (isFormationLeader _unit) then {
 if (unitPos _unit == "Auto") then {
 	_unit setUnitPos "Up";
 };
-
-[_unit, _suppressedTime] call FUNC(EH);
+[_unit, _suppressedTime] call FUNC(eventHandlers);

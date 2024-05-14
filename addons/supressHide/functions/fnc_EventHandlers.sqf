@@ -25,7 +25,7 @@ _unit addEventHandler ["Suppressed", {
 	_unit lookAt _shooter;
 	[_unit] call FUNC(Hide);
 
-	_unit setVariable ["AF_suppressedTime", time + random _suppressedTime];
+	_unit setVariable [QGVAR(suppressedTime), time + (random _suppressedTime max 5)];
 }];
 
 // hide on reload

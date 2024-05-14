@@ -1,4 +1,4 @@
-PREP(EH);
+PREP(eventHandlers);
 PREP(hide);
 PREP(init);
 PREP(unhide);
