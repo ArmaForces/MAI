@@ -13,6 +13,8 @@
 		None
 
 */
+#include "script_component.hpp"
+
 if (!isServer) exitWith {
 	diag_log text "[MAI_fnc_buildSpawnInit] script intended to be only used on server, exit.";
 };

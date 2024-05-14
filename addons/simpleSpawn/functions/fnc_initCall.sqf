@@ -12,6 +12,8 @@
 		None
 
 */
+#include "script_component.hpp"
+
 if (!isServer) exitWith {};
 
 private _mode = param [0,"",[""]];
