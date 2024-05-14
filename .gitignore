@@ -2,11 +2,11 @@
 addons/*.pbo
 
 # Releases
+.hemttout/*
 releases/*
 hemtt
 hemtt.exe
 symbols/*
-@MAI TEST
 
 # Bikey
 *.biprivatekey
