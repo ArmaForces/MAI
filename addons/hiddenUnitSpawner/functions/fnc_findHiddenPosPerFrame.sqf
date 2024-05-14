@@ -69,7 +69,7 @@ if (_posVisible) exitWith {
 	] call CBA_fnc_execNextFrame;
 };
 // spawn unit
-private _newUnit = [_group, _type, _position, _position getDir _averagePos] call MAI_fnc_spawnAI;
+private _newUnit = [_group, _type, _position, _position getDir _averagePos] call EFUNC(common,spawnAI);
 if !(_loadout isEqualTo []) then {
 	_newUnit setUnitLoadout _loadout;
 };
