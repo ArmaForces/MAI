@@ -1,5 +1,3 @@
-#include "script_component.hpp"
-
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
