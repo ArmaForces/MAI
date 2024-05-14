@@ -12,6 +12,7 @@
 		0: Headless Cliend ID, 2(server) if not connected	<NUMBER>
 
 */
+#include "script_component.hpp"
 
 if (!isMultiplayer) exitWith {0};
 if (!isServer) exitWith {clientOwner};

@@ -16,6 +16,8 @@
 		0: Unit <OBJECT>
 
 */
+#include "script_component.hpp"
+
 params ["_group","_type","_pos",["_dir",0],["_stanceTime",0,[0]],["_useAnimation",true]];
 private _unit = _group createUnit [_type, _pos, [], 0, "CAN_COLLIDE"];
 _unit setFormDir _dir;
