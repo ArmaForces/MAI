@@ -77,7 +77,7 @@ if (_group isEqualTo grpNull) then {
 while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 	private _unit = objNull;
 	private _unitArray = _units deleteAt 0;
-	_unitArray params ["_type", "_loadout", "_pos", "_dir", "_stance", "_disabledAiFeatures", "_vehicleArray", "_building", "_buildingStatus"];
+	_unitArray params ["_type", "_loadout", "_pos", "_dir", "_stance", "_disabledAiFeatures", "_vehicleArray", "_building", "_buildingStatus", "_tickets"];
 	if !(_vehicleArray isEqualTo []) then {
 		_vehicleArray params ["_vehicle", "_role", "_cargoIndex", "_vehicleIndex"];
 		if (_deleteVehicles && {_vehicle isEqualTo objNull}) then {
@@ -109,6 +109,7 @@ while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 		[_unit, _x] remoteExecCall ["disableAI", 0, _unit];
 	} forEach _disabledAiFeatures;
 
+	_unit setVariable [QEGVAR(hiddenUnitSpawner,tickets), _tickets];
 	[_unit] call _executionCodeUnit;
 
 	if (count units _group == 1) then {

@@ -1,3 +1,4 @@
+#include "script_component.hpp"
  /*
 	MAI_fnc_simpleSpawnGetGroups
 
@@ -13,8 +14,6 @@
 		None
 
 */
-#include "script_component.hpp"
-
 params [
 	["_groupsInput",[],[[]]]
 ];
@@ -113,8 +112,8 @@ private _vehiclesToDelete = [];
 				_building = _object;
 				_buildingStatus = alive _object;
 			};
-
-			_units pushBack [_type, _loadout, _pos, _dir, _stance, _disabledAiFeatures, _vehicleArray, _building, _buildingStatus];
+			private _tickets = _unit getVariable [QEGVAR(hiddenUnitSpawner,tickets), 1];
+			_units pushBack [_type, _loadout, _pos, _dir, _stance, _disabledAiFeatures, _vehicleArray, _building, _buildingStatus, _tickets];
 		};
 		deleteVehicle _unit;
 	} forEach units _group;
