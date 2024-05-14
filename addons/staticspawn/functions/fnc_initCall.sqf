@@ -11,11 +11,11 @@
  * None
  *
  * Example:
- * [[bob, ted], false] call afmf_main_fnc_example
+ * [[bob, ted], false] call afmai_main_fnc_example
  *
  * Public: No
  */
- 
+
 if (!isServer) exitWith {};
 
 private _mode = param [0,"",[""]];

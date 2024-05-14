@@ -1,1 +1,1 @@
-#include "\z\afmf\addons\simpleSpawn\script_component.hpp"
+#include "\z\afmai\addons\simpleSpawn\script_component.hpp"

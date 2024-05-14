@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [[bob, ted], false] call afmf_main_fnc_example
+ * [[bob, ted], false] call afmai_main_fnc_example
  *
  * Public: No
  */
@@ -39,7 +39,7 @@ private _executionCodeGroup = _logic getVariable [QGVAR(executionCodeGroup), {}]
 
 {
 	_x params ["_groupID", "_side", "_units", ["_group", grpNull]];
-	
+
 	// just break the loop, continue it on next frame
 	if (_units isEqualTo []) exitWith {
 		_groups deleteAt _forEachIndex;

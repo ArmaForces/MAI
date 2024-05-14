@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [[bob, ted], false] call afmf_main_fnc_example
+ * [[bob, ted], false] call afmai_main_fnc_example
  *
  * Public: No
  */
@@ -28,7 +28,7 @@ if (_activate) then {
 	// if (!isServer && !hasInterface) exitWith {
 	// 	[_logic, _groups] call FUNC(staticspawnInterval);
 	// };
-	
+
 	private _activationTriggers = _logic getVariable [QEGVAR(main, activationTriggers) ,[]];
 	private _includeAir = _logic getVariable [QEGVAR(main, includeAir), false];
 	private _forceActivate = _logic getVariable [QGVAR(forceActivate), false];
