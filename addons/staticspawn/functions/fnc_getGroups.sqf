@@ -96,7 +96,7 @@ private _vehiclesInfo = [];
 				private _vehicleIndex = -1;
 				//_vehicleIndex = _vehiclesToDelete findIf {_x isEqualTo _vehicle};
 				//if (_vehicleIndex == -1) then {
-				private _vehInfo = _vehicle call MAI_fnc_getVehicleInfo;
+				private _vehInfo = _vehicle call EFUNC(common,getVehicleInfo);
 				_vehiclesInfo pushBack _vehInfo;
 				_vehicleIndex = count _vehiclesInfo - 1;
 				//};

@@ -20,7 +20,7 @@ params [["_logic",objNull]];
 
 if (_logic isEqualTo objNull) exitWith {};
 
-private _activate = [_logic] call MAI_fnc_checkActivateConditions;
+private _activate = [_logic] call EFUNC(common,checkActivateConditions);
 
 if (_activate) then {
 	private _groups = _logic getVariable [QEGVAR(main,groups), []];
@@ -39,7 +39,7 @@ if (_activate) then {
 	private _maxUnitsPerdistance = _logic getVariable [QGVAR(maxUnitsPerdistance), 1];
 	private _tickets = _logic getVariable [QGVAR(tickets), 1];
 
-	private _owner = call MAI_fnc_HCfind;
+	private _owner = call EFUNC(common,HCfind);
 	[
 		_logic,
 		_activationTriggers,

@@ -92,14 +92,14 @@ if !(_vehicleArray isEqualTo []) then {
 			_checkBuildings && {
 			_vehicle isKindOf "StaticWeapon" &&
 			{!(alive _building isEqualTo _buildingStatus)}
-		}) exitWith {systemChat "MAI_fnc_staticSpawnInterval exitWith"};
-		_unit = [_group, _type, _pos, _dir, 0, false] call MAI_fnc_spawnAI;
+		}) exitWith {};
+		_unit = [_group, _type, _pos, _dir, 0, false] call EFUNC(common,spawnAI);
 		_group addVehicle _vehicle;
-		[_unit, _vehicle, _role, _cargoIndex] call MAI_fnc_moveInVehicleRole;
+		[_unit, _vehicle, _role, _cargoIndex] call EFUNC(common,moveInVehicleRole);
 	};
 } else {
 	if (!_checkBuildings || alive _building isEqualTo _buildingStatus) then {
-		_unit = [_group, _type, _pos, _dir] call MAI_fnc_spawnAI;
+		_unit = [_group, _type, _pos, _dir] call EFUNC(common,spawnAI);
 		_unit setUnitPos _stance;
 	};
 };
