@@ -1,0 +1,9 @@
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_spawnAI.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_expectedNewUnitsCountReturn.sqfc
+compile compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_createVehicleFromInfo.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_HCfind.sqfc
+C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_patrolRandomWaypoints.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_getGroups.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_getVehicleInfo.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_moveInVehicleRole.sqfc
+compile C:/Users/Mydlo/AppData/Local/Temp/hemtt/Git_ArmaForces_MAI/asc/output/z/afmai/addons/main/functions/fnc_checkActivateConditions.sqfc

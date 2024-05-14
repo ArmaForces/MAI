@@ -1,0 +1,11 @@
+name = "ArmaForces Mission Framework - 0.0.0";
+dir = "@armaforces_mission_framework";
+author = "ArmaForces";
+url = "https://github.com/ArmaForces/MissionFramework/";
+action = "https://armaforces.com/";
+actionName = "Website";
+logo = "\z\afmf\addons\main\ui\logo_sm_ca.paa";
+logoOver = "\z\AFMF\addons\main\ui\logo_sm_ca.paa";
+overviewPicture = "\z\AFMF\addons\main\ui\logo_sm_ca.paa";
+tooltip = "ArmaForces Mission Framework";
+description = "ArmaForces Mission Framework with modules for easier mission creation.";
