@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [[bob, ted], false] call afmf_main_fnc_example
+ * [[bob, ted], false] call afmai_main_fnc_example
  *
  * Public: No
  */
@@ -47,7 +47,7 @@ _logic setVariable ["activationTriggers",_activationTriggers];
 
 private _groupsArray = [_groupSync, _logic] call FUNC(getGroups);
 _groupsArray params ["_groups", "_vehiclesInfo"];
-_logic setVariable [QEGVAR(main, vehiclesInfo), _vehiclesInfo];
+_logic setVariable [QEGVAR(main,vehiclesInfo), _vehiclesInfo];
 
 /*
 private _deleteVehicles = _logic getVariable ["deleteVehicles", false];
@@ -56,7 +56,7 @@ if (_deleteVehicles) then {
 };
 */
 
-_logic setVariable [QEGVAR(main, groups), _groups];
+_logic setVariable [QEGVAR(main,groups), _groups];
 
 [
 	{_this call FUNC(WaitUntil)},

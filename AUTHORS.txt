@@ -1,4 +1,4 @@
-# ArmaForces Mission Framework CONTRIBUTOR LIST
+# ArmaForces Madin AI CONTRIBUTOR LIST
 # If you contributed, but are not listed here,
 # contact one of the Core Team members.
 #

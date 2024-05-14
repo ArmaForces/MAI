@@ -1,3 +1,20 @@
+#include "script_component.hpp"
+/*
+ * Author: Madin5
+ * <Description>
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * <Example>
+ *
+ * Public: No
+ */
+
 params [["_unit", objNull]];
 private _hidden = _unit getVariable ["AF_unitHidden", false];
 if (_hidden) exitWith {};

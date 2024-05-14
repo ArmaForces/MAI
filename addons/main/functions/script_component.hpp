@@ -1,1 +1,1 @@
-#include "\z\afmf\addons\main\script_component.hpp"
+#include "\z\afmai\addons\main\script_component.hpp"

@@ -1,5 +1,3 @@
-#include "script_component.hpp"
-
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
@@ -171,7 +169,7 @@ class CfgVehicles
             {
                 displayName = "$STR_MAI_activateCondition";
                 tooltip = "$STR_MAI_activateConditionShort";
-                property = QEGVAR(main, activateCondition);
+                property = QEGVAR(main,activateCondition);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "'true'";

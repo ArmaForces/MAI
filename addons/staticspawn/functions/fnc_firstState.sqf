@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [[bob, ted], false] call afmf_main_fnc_example
+ * [[bob, ted], false] call afmai_main_fnc_example
  *
  * Public: No
  */
@@ -31,12 +31,12 @@ params [
 ];
 
 if (_logic isEqualTo objNull) exitWith {};
-_logic setVariable [QEGVAR(main, activationTriggers), _activationTriggers];
+_logic setVariable [QEGVAR(main,activationTriggers), _activationTriggers];
 _logic setVariable [QGVAR(groups), _groups];
-_logic setVariable [QEGVAR(main, includeAir), _includeAir];
+_logic setVariable [QEGVAR(main,includeAir), _includeAir];
 _logic setVariable [QGVAR(forceActivate), _forceActivate];
 _logic setVariable [QGVAR(checkBuildings), _checkBuildings];
-_logic setVariable [QEGVAR(main, activateCondition), _activateCondition];
+_logic setVariable [QEGVAR(main,activateCondition), _activateCondition];
 _logic setVariable [QGVAR(executionCodeUnit), _executionCodeUnit];
 _logic setVariable [QGVAR(executionCodeGroup), _executionCodeGroup];
 _logic setVariable [QGVAR(maxUnitsPerdistance), _maxUnitsPerdistance];

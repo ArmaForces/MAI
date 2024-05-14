@@ -20,8 +20,8 @@
 #define ACELSTRING(module,string)   QUOTE(TRIPLES(STR,DOUBLES(ACE_PREFIX,module),string))
 #define ACECSTRING(module,string)   QUOTE(TRIPLES($STR,DOUBLES(ACE_PREFIX,module),string))
 
-// AFMF macros
+// AFMAI macros
 #define IS_MOD_LOADED(modclass)     (isClass (configFile >> "CfgPatches" >> #modclass))
 
-// AFMF Debug macros
-#include "\z\afmf\addons\main\script_debug.hpp"
+// AFMAI Debug macros
+#include "\z\afmai\addons\main\script_debug.hpp"
