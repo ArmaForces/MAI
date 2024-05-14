@@ -1,0 +1,9 @@
+PREP(spawnAI);
+PREP(patrolRandomWaypoints);
+PREP(moveInVehicleRole);
+PREP(HCfind);
+PREP(getVehicleInfo);
+PREP(checkActivateConditions);
+PREP(createVehicleFromInfo);
+PREP(expectedNewUnitsCountReturn);
+PREP(getGroups);
