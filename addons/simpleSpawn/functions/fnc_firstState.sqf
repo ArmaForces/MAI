@@ -38,7 +38,7 @@ _logic setVariable [QGVAR(activationTriggers), _activationTriggers];
 _logic setVariable [QGVAR(groups), _groups];
 _logic setVariable [QGVAR(vehiclesInfo), _vehiclesInfo];
 _logic setVariable [QGVAR(activationDistance), _activationDistance];
-_logic setVariable [QGVAR(deactivation), _deactivation];
+_logic setVariable [QGVAR(deactivationDistance), _deactivation];
 _logic setVariable [QGVAR(includeAir), _includeAir];
 _logic setVariable [QGVAR(forceActivate), _forceActivate];
 _logic setVariable [QGVAR(checkBuildings), _checkBuildings];

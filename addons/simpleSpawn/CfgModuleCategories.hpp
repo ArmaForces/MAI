@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
@@ -61,17 +63,17 @@ class CfgVehicles
 				displayName = "$STR_mai_activationDistance";
 				tooltip = "$STR_mai_activationDistanceShort";
 				defaultValue = "750";
-				property = "activation";
+				property = QGVAR(activationDistance);
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
 			};
-			class GVAR(deactivation): Default
+			class GVAR(deactivationDistance): Default
   			{
 				displayName = "$STR_mai_deactivation";
 				tooltip = "$STR_mai_deactivationShort";
 				defaultValue = "-1";
-				property = "deactivation";
+				property = QGVAR(deactivationDistance);
 				expression = "_this setVariable ['%s',_value];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -80,7 +82,7 @@ class CfgVehicles
             {
                 displayName = "$STR_mai_includeAir";
                 tooltip = "$STR_mai_includeAirShort";
-                property = "includeAir";
+                property = QGVAR(includeAir);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -90,7 +92,7 @@ class CfgVehicles
 				displayName = "$STR_mai_interval";
 				tooltip = "$STR_mai_intervalShort";
 				defaultValue = "0.1";
-				property = "interval";
+				property = QGVAR(interval);
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -100,7 +102,7 @@ class CfgVehicles
 				displayName = "$STR_mai_unitsPerInterval";
 				tooltip = "$STR_mai_unitsPerIntervalShort";
 				defaultValue = "1";
-				property = "unitsPerInterval";
+				property = QGVAR(unitsPerInterval);
 				expression = "_this setVariable ['%s',_value max 0];";
 				typeName = "NUMBER";
 				control = "EditShort";
@@ -109,7 +111,7 @@ class CfgVehicles
             {
                 displayName = "$STR_mai_deleteVehicles";
                 tooltip = "$STR_mai_deleteVehiclesShort";
-                property = "deleteVehicles";
+                property = QGVAR(deleteVehicles);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -118,7 +120,7 @@ class CfgVehicles
             {
                 displayName = "$STR_mai_checkBuildings";
                 tooltip = "$STR_mai_checkBuildingsShort";
-                property = "checkBuildings";
+                property = QGVAR(checkBuildings);
                 defaultValue = "true";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
@@ -127,7 +129,7 @@ class CfgVehicles
             {
                 displayName = "$STR_mai_activateCondition";
                 tooltip = "$STR_mai_activateConditionShort";
-                property = "activateCondition";
+                property = QGVAR(activateCondition);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "'true'";
@@ -139,16 +141,16 @@ class CfgVehicles
             {
                 displayName = "$STR_mai_deleteTrigger";
                 tooltip = "$STR_mai_deleteTriggerShort";
-                property = "deleteTrigger";
+                property = QGVAR(deleteTrigger);
                 defaultValue = "false";
 				expression = "_this setVariable ['%s', _value];";
                 typeName = "BOOL";
             };
-            class executionCodeUnit
+            class GVAR(executionCodeUnit)
             {
                 displayName = "$STR_mai_executionCodeUnit";
                 tooltip = "$STR_mai_executionCodeUnitShort";
-                property = "executionCodeUnit";
+                property = QGVAR(executionCodeUnit);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
@@ -156,11 +158,11 @@ class CfgVehicles
                 validate = "none";
                 wikiType = "[[String]]";
             };
-            class executionCodePatrol
+            class GVAR(executionCodePatrol)
             {
                 displayName = "$STR_mai_executionCodePatrol";
                 tooltip = "$STR_mai_executionCodePatrolShort";
-                property = "executionCodePatrol";
+                property = QGVAR(executionCodePatrol);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";
@@ -168,11 +170,11 @@ class CfgVehicles
                 validate = "none";
                 wikiType = "[[String]]";
             };
-            class executionCodeVehicle
+            class GVAR(executionCodeVehicle)
             {
                 displayName = "$STR_mai_executionCodeVehicle";
                 tooltip = "$STR_mai_executionCodeVehicleShort";
-                property = "executionCodeVehicle";
+                property = QGVAR(executionCodeVehicle);
                 control = "EditCodeMulti5";
                 expression = "_this setVariable ['%s',compile _value];";
                 defaultValue = "''";

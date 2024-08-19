@@ -125,7 +125,7 @@ while {_spawnedUnits < _unitsPerInterval && !(_units isEqualTo [])} do {
 };
 
 if (_groups isEqualTo []) exitWith {
-	private _deactivation = _logic getVariable [QGVAR(deactivation), -1];
+	private _deactivation = _logic getVariable [QGVAR(deactivationDistance), -1];
 	if (_deactivation >= 0) then {
 		[
 			{_this call FUNC(despawn)},

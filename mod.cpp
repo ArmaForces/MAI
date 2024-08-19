@@ -1,4 +1,4 @@
-name = "ArmaForces MAI - 0.0.0";
+name = "ArmaForces MAI - 0.2.0";
 dir = "@armaforces_mai";
 author = "ArmaForces";
 url = "https://github.com/ArmaForces/MAI/";
